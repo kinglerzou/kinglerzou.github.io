@@ -432,44 +432,14 @@
 
       
         
-          
-            <h2 id="web移动端问题摘要"><a href="#web移动端问题摘要" class="headerlink" title="web移动端问题摘要"></a>web移动端问题摘要</h2><p><em>二年来做移动端web遇到的问题摘要，记录在这里，持续更新….</em></p>
-<h4 id="针对有些手机不支持text-decoration的现象"><a href="#针对有些手机不支持text-decoration的现象" class="headerlink" title="针对有些手机不支持text-decoration的现象"></a>针对有些手机不支持text-decoration的现象</h4><p>&nbsp; &nbsp; 通过添加border-bottom的方式去模拟，安卓手机市场采用的标准太乱了，希望越来越符合w3c的标准吧。</p>
-<h4 id="微信分享完后页面会出现白屏的现象"><a href="#微信分享完后页面会出现白屏的现象" class="headerlink" title="微信分享完后页面会出现白屏的现象"></a>微信分享完后页面会出现白屏的现象</h4><p>&nbsp; &nbsp; 在一些安卓手机下在做微信分享时，分享完后页面会出现白屏的现象.<br>在分享api的回调里面去执行window.reload(),这样势必会造成多余的请求，在微信官方论坛一直没发现此类问题的解决方法，jsdk能越来越优化吧。</p>
-<h4 id="footer始终固定在底部"><a href="#footer始终固定在底部" class="headerlink" title="footer始终固定在底部"></a>footer始终固定在底部</h4><p>&nbsp; &nbsp; 在做h5页的时候，经常底部是存在公司logo的，页面内容高度能撑满一屏时没问题，而随页面内容的增加而填充在主体内容的下方，这样绝对定位有问题；解决方法是：不满时用绝对定位且父元素要预留footer的高度</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&lt;html&gt; </div><div class="line">&lt;head&gt; </div><div class="line"> &lt;style type=&quot;text/css”&gt; </div><div class="line">html,body&#123;height:100%&#125; </div><div class="line">.footer &#123;margin-top:-30px;</div><div class="line">height:30px;</div><div class="line">background-color:#eee;</div><div class="line">&#125; </div><div class="line">.wrap&#123;min-height:100%&#125; </div><div class="line">.main&#123;padding-bottom:30px;</div><div class="line">overflow:hidden;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt; </div><div class="line">&lt;/head&gt; </div><div class="line">&lt;body&gt; </div><div class="line">&lt;div class=&quot;wrap”&gt; </div><div class="line">&lt;div class=&quot;main&quot;&gt;这里是网页的主体&lt;/div&gt;</div><div class="line">&lt;/div&gt; </div><div class="line">&lt;div class=&quot;footer&quot;&gt;这里是页脚&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<h4 id="a标签中使用img后的高度多了几个像素"><a href="#a标签中使用img后的高度多了几个像素" class="headerlink" title="a标签中使用img后的高度多了几个像素"></a>a标签中使用img后的高度多了几个像素</h4><p>&nbsp; &nbsp; a元素下有一个匿名文本，这个文本外有一个匿名行级盒子，它有的默认vertical-align是baseline的，而且往往因为上文line-height的影响，使它有个line-height，从而使其有了高度，因为baseline对齐的原因，这个匿名盒子就会下沉，往下撑开一些距离，所以把a撑高了。<br>&nbsp; &nbsp; 解决办法：<br>1.设置a的line-height:0或者font-size:0(如何内存在字体该方法不可用)；<br>2.img设置display:block  同时移动端图片适配压缩的话，设置img的width:100%;</p>
-<h4 id="display-inline-block之间会存在间隙"><a href="#display-inline-block之间会存在间隙" class="headerlink" title="display:inline-block之间会存在间隙"></a>display:inline-block之间会存在间隙</h4><p>&nbsp; &nbsp; 经常在把a标签变成一个button时会设置这个属性，移动端多个button并排时，如何做到自适应呢，外层div设置宽度100%和text-align:center，这也是水平居中元素的方法，内层a标签设置宽度百分比，相互之间的间距，设置左边a的margin-left百分比，注意计算，整体不要超过100%；那么不用这种方法来设置会产生间隙，解决方法：html代码不要换行;font-size:0;margin负边距，letter-spacing和word-spacing</p>
-<h4 id="图片加载完成判断-计算坐标-手机端自适应"><a href="#图片加载完成判断-计算坐标-手机端自适应" class="headerlink" title="图片加载完成判断 ,计算坐标 手机端自适应"></a>图片加载完成判断 ,计算坐标 手机端自适应</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$(window).load(function()&#123;</div><div class="line">     var img=$(‘.inside_bgp&apos;);//整页是以一张图片作为背景</div><div class="line">     var theImg=new  Image();</div><div class="line">     theImg.src=img.attr(’src’);</div><div class="line">     var bi=img.height()/theImage.height;//比率</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h4 id="获取页面模版时的处理"><a href="#获取页面模版时的处理" class="headerlink" title="获取页面模版时的处理"></a>获取页面模版时的处理</h4><p>&nbsp; &nbsp; 获取模版html既修改其中的某个id的值后append，注意获取模版时就要获取其对象，不要获取后再变为对象($)。类似改变值类型的值，应该改变其引用类型</p>
-<h4 id="移动端上传图片压缩功能实现"><a href="#移动端上传图片压缩功能实现" class="headerlink" title="移动端上传图片压缩功能实现"></a>移动端上传图片压缩功能实现</h4><p>&nbsp; &nbsp; 手机上经常会用到上传图片的功能，随着智能手机的像素越来越高，基本上照出来的图片都在3M以上，这边遇到的一个情况是，服务端接口限制了图片大小为2M，这种接口一般都是通用的，让后端改接口大小限制肯定是不可能的啦，所以这边针对用户上传图片到服务端之前做一个压缩处理，具体实现是通过canva绘制等比图片转换为base64：</p>
-<pre><code>var reader = new FileReader();
-var $img = new Image();
-reader.readAsDataURL(file);
-reader.onload=function(e){
-$img.src = this.result;
-}
-$img.onload = function() {
- var width = $img.width,
- height = $img.height,
- scale = width / height;
- width = parseInt(800);
- height = parseInt(width / scale);
-
-var $canvas = $(&apos;&lt;canvas&gt;&apos;);
-if (!$canvas[0] || !$canvas[0].getContext) {
-    alert(&apos;版本太低,请升级软件&apos;);
-    return false;
-}
-var ctx = $canvas[0].getContext(&apos;2d&apos;);
-$canvas.attr({width : width, height : height});
-ctx.drawImage($img, 0, 0, width, height);
-base64 = $canvas[0].toDataURL(&apos;image/jpeg&apos;,1);
-base64 = base64.substr(22);
-}
-</code></pre><p>生成base64后form提交或者ajax提交就行了。</p>
-
-          
+          <h2 id="web移动端问题摘要"><a href="#web移动端问题摘要" class="headerlink" title="web移动端问题摘要"></a>web移动端问题摘要</h2><p><em>二年来做移动端web遇到的问题摘要，记录在这里，持续更新….</em></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/03/11/web移动端问题摘要/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
