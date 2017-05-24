@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="回首时，不要大梦初醒般悔不当初，而是要庆幸自己曾努力过，没有辜负青春">
+<meta name="description" content="##常用算法算法是计算机编程非常重要的组成部分，算法可以让你很好的提高效率… ###冒泡排序1234567891011121314151617181、  var arr = [5,39,8,1,2,13,55];  arr = arr.sort(function(a,b)&amp;#123;return a-b&amp;#125;);  console.log(arr);//1,2,5,8,13,39,552、">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript常用算法">
 <meta property="og:url" content="http://yoursite.com/2017/05/24/javascript常用算法/index.html">
 <meta property="og:site_name" content="kinglerzou">
-<meta property="og:description" content="回首时，不要大梦初醒般悔不当初，而是要庆幸自己曾努力过，没有辜负青春">
-<meta property="og:updated_time" content="2017-05-24T06:41:07.000Z">
+<meta property="og:description" content="##常用算法算法是计算机编程非常重要的组成部分，算法可以让你很好的提高效率… ###冒泡排序1234567891011121314151617181、  var arr = [5,39,8,1,2,13,55];  arr = arr.sort(function(a,b)&amp;#123;return a-b&amp;#125;);  console.log(arr);//1,2,5,8,13,39,552、">
+<meta property="og:updated_time" content="2017-05-24T11:42:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript常用算法">
-<meta name="twitter:description" content="回首时，不要大梦初醒般悔不当初，而是要庆幸自己曾努力过，没有辜负青春">
+<meta name="twitter:description" content="##常用算法算法是计算机编程非常重要的组成部分，算法可以让你很好的提高效率… ###冒泡排序1234567891011121314151617181、  var arr = [5,39,8,1,2,13,55];  arr = arr.sort(function(a,b)&amp;#123;return a-b&amp;#125;);  console.log(arr);//1,2,5,8,13,39,552、">
 
 
 
@@ -176,7 +176,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">Front End Engineer</p>
+        <p class="site-subtitle">({'坐标':'深圳'})=>{return Front End Engineer}</p>
       
   </div>
 
@@ -330,7 +330,12 @@
       
 
       
-        
+        <p>##常用算法<br><em>算法是计算机编程非常重要的组成部分，算法可以让你很好的提高效率…</em></p>
+<p>###冒泡排序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">1、</div><div class="line">  var arr = [5,39,8,1,2,13,55];</div><div class="line">  arr = arr.sort(function(a,b)&#123;return a-b&#125;);</div><div class="line">  console.log(arr);//1,2,5,8,13,39,55</div><div class="line">2、</div><div class="line">  function bubbleSort(items)&#123;</div><div class="line">     var len=items.length;</div><div class="line">     for(var i=0;i&lt;len;i++ )&#123;</div><div class="line">       for(var j=0;j&lt;len-i-1;j++)&#123;</div><div class="line">         if(items[j]&gt;items[j+1])&#123;</div><div class="line">            var temp=items[j];</div><div class="line">            items[j]=items[j+1];</div><div class="line">            items[j+1]=temp;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    return items;</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+<p>###快速排序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">var arr = [5,39,8,1,2,13,55];</div><div class="line">function quickSort(arr)&#123;</div><div class="line">  if(arr.length&lt;=1) return arr;</div><div class="line">    var valIndex=Math.floor(arr.length/2),//基准值</div><div class="line">           val=arr.splice(valIndex,1)[0],</div><div class="line">            left=[],</div><div class="line">            right=[];</div><div class="line">    for(var i=0;i&lt;arr.length;i++)&#123;</div><div class="line">      if(arr[i]&lt;val)&#123;</div><div class="line">        left.push(arr[i]);</div><div class="line">      &#125;else&#123;</div><div class="line">       right.push(arr[i]);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  return quickSort(left).concat([val],quickSort(right));</div><div class="line">&#125;</div><div class="line">quickSort(arr);</div></pre></td></tr></table></figure></p>
+<p>###二分查找 有序数组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">function binarySearch(val,arr,startIndex,endIndex)&#123;</div><div class="line">  if(!value||!(arr instanceof Array)) return;</div><div class="line">  var len = arr.length,</div><div class="line">      startIndex = typeof startIndex === &apos;number&apos;?startIndex:0,</div><div class="line">      endIndex = typeof endIndex === &apos;number&apos;?endIndex:len-1,</div><div class="line">      midIndex = Math.floor((startIndex + endIndex)/2),</div><div class="line">      midVal = arr[midIndex];</div><div class="line">  if(startIndex&gt;endIndex) return;</div><div class="line">  if(midval === val)&#123;</div><div class="line">    return midval;</div><div class="line">  &#125;else if(midval&gt;val)&#123;  </div><div class="line">    return  binarySearch(val,arr,startIndex,midIndex-1);</div><div class="line">  &#125;else&#123;</div><div class="line">    return binnarySearch(val,arr,midIndex+1,endIndex);</div><div class="line"> &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>###数组去重<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">//ie8 Array无indexOf属性</div><div class="line">function unique(arr)&#123;</div><div class="line">   var n=[];</div><div class="line">   for (var i = 0; i&lt;=arr.length; i++) &#123;</div><div class="line">     n.indexOf(arr[i])==-1&amp;&amp;n.push(arr[i]);</div><div class="line">   &#125;</div><div class="line">   return n;</div><div class="line">&#125;</div><div class="line">//hash</div><div class="line">function unique2(arr)&#123;</div><div class="line">  var n=[],obj=&#123;&#125;;</div><div class="line">  for(var i=0;i&lt;arr.length;i++)&#123;</div><div class="line">     if(obj[arr[i]]==undefined)&#123;</div><div class="line">        obj[arr[i]]=1;</div><div class="line">        n.push(arr[i]);</div><div class="line">     &#125;else if(obj[arr[i]]===1)&#123;</div><div class="line">      continue;</div><div class="line">     &#125;</div><div class="line">  &#125;</div><div class="line">  return n;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
       
     </div>
 
